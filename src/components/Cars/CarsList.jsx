@@ -5,13 +5,13 @@ import Cars from './Cars'
 import axios from 'axios'
 
 const CarsList = () => {
-  const [products, setProducts] = useState([]);
+  const [sortedList, setSortedList] = useState([])
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get('https://spaceship-api.vercel.app/products', {});
-        setProducts(response.data);
+        setSortedList(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -20,10 +20,10 @@ const CarsList = () => {
   }, []);
 
 
-  const [sortedList, setSortedList] = useState([...products]);
+  
 
   const handleSort = (keyName, order) => {
-    const sorted = [...products].sort((a, b) => {
+    const sorted = [...sortedList].sort((a, b) => {
       if (order === 'asc') {
         return a[keyName] < b[keyName] ? -1 : 1;
       }
