@@ -1,0 +1,23 @@
+main{
+    background: linear-gradient(to bottom,#3a3e4b ,#252c3a);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 100px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerimg{
+    width: 250px;
+    height: 55px;
+}
